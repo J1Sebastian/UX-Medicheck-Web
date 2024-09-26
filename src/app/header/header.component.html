@@ -1,0 +1,23 @@
+<mat-toolbar class="appBar" *ngIf="!isLoginOrRegisterPage(); else simpleHeader">
+  <div class="leftSection">
+    <span class="title">MediCheck</span>
+    <mat-icon class="icon">health_and_safety</mat-icon>
+  </div>
+  <div class="centerSection">
+    <span class="link" [routerLink]="'/dashboard'">Dashboard</span>
+    <span class="link">Calendario</span>
+    <span class="link" [routerLink]="'/alarm'">Crear Alarma</span>
+  </div>
+  <button mat-icon-button>
+    <mat-icon class="icon" [routerLink]="'/profile'">account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+<ng-template #simpleHeader>
+  <mat-toolbar class="appBar simple">
+    <div class="centeredTitle">
+      <span class="title">MediCheck</span>
+      <mat-icon class="icon">health_and_safety</mat-icon>
+    </div>
+  </mat-toolbar>
+</ng-template>

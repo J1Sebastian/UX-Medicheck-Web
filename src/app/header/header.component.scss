@@ -1,0 +1,57 @@
+.appBar {
+  background-color: #a3c2e3;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+  box-shadow: none;
+}
+
+.appBar.simple {
+  justify-content: center;
+}
+
+.centeredTitle {
+  display: flex;
+  align-items: center;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-right: 10px;
+  margin-left: 20px;
+  color: black;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.centerSection {
+  display: flex;
+  gap: 120px;
+  font-size: 1.1rem;
+}
+
+.link {
+  color: black;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.link:hover {
+  background-color: rgba(0, 59, 92, 0.1);
+  box-shadow: 0 0 5px rgba(0, 59, 92, 0.5);
+}
+
+.link:active {
+  transform: scale(0.95);
+}
+
+.icon {
+  color: #003b5c;
+  transform: scale(1.7);
+}

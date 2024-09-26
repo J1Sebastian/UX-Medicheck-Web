@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="column-left">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <mat-icon class="icon">add_alarm</mat-icon>Nueva Alarma
+      </div>
+    </div>
+
+    <div class="field-wrapper">
+      <div class="field-title">Veces al día</div>
+      <mat-form-field appearance="outline" class="dropdown small-dropdown">
+        <mat-select [(value)]="timesPerDay">
+          <mat-option *ngFor="let num of [1, 2, 3, 4]" [value]="num">
+            {{ num }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="field-wrapper">
+      <div class="field-title">Frecuencia</div>
+      <mat-form-field appearance="outline" class="dropdown small-dropdown">
+        <mat-select [(value)]="frequency">
+          <mat-option *ngFor="let freq of ['Repetir cada 3 horas', 'Repetir cada 6 horas', 'Repetir cada 8 horas']"
+            [value]="freq">
+            {{ freq }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="field-wrapper">
+      <div class="field-title">Recordar en</div>
+      <mat-form-field appearance="outline" class="dropdown small-dropdown">
+        <mat-select [(value)]="reminderTime">
+          <mat-option *ngFor="let time of ['5 minutos', '10 minutos', '15 minutos']" [value]="time">
+            {{ time }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="field-wrapper">
+      <div class="field-title">Agregar nota</div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nota</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </div>
+
+    <div class="button-group">
+      <button mat-raised-button class="cancel-button">Cancelar</button>
+      <button mat-raised-button class="save-button">Guardar</button>
+    </div>
+  </div>
+
+  <div class="column-right">
+    <div class="editable-fields">
+      <div class="field title">
+        <mat-icon class="material-icons-outlined icon-right-title">edit</mat-icon>
+        <div contenteditable="true">{{ medicationName }}</div>
+      </div>
+
+      <div class="sub-fields">
+        <mat-icon class="material-icons-outlined icon-edit">edit</mat-icon>
+        <div contenteditable="true" class="field mgr">{{ dosage }}</div>
+        <mat-icon class="material-icons-outlined icon-right">image_search</mat-icon>
+        <button mat-raised-button class="image-button" (click)="toggleImage()">{{ image_label }}</button>
+      </div>
+
+      <div *ngIf="showImage" class="image-container">
+        <img src="assets/image.png" alt="Acetaminofén" />
+      </div>
+
+      <div class="circle-container" *ngIf="!showImage">
+        <div class="circle-options">
+          <button *ngFor="let circle of circleState; let i = index" mat-mini-fab [ngStyle]="{
+              'background-color': circle ? '#003b5c' : '#A3C2E3'
+            }" (click)="toggleCircle(i)"></button>
+        </div>
+        <div class="time-display">
+          <div contenteditable="true">{{ time.split(' ')[0] }}</div>
+          <button class="time-display-sub" (click)="toggleAmPm()">
+            {{ time.split(' ')[1] }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="days-of-week">
+      <button mat-mini-fab *ngFor="let day of ['L', 'M', 'M', 'J', 'V', 'S', 'D']; let i = index" [ngStyle]="{
+          'background-color': selectedDays[i] ? '#003b5c' : '#A3C2E3',
+          color: selectedDays[i] ? 'white' : 'black'
+        }" (click)="toggleDay(i)">
+        {{ day }}
+      </button>
+    </div>
+  </div>
+</div>

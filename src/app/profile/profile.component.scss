@@ -1,0 +1,79 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #003b5c;
+}
+
+.profile-form {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: black;
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.email {
+  color: #979797;
+  margin-bottom: 30px;
+}
+
+button-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cancel-button,
+.save-button {
+  width: 100px;
+  margin: 0 30px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  padding: 1px 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cancel-button {
+  background-color: #f4a261;
+  color: black;
+}
+
+.cancel-button:hover {
+  background-color: #e6954f;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.save-button {
+  background-color: #a8d5ba;
+  color: black;
+  font-weight: 500;
+}
+
+.save-button:hover {
+  background-color: #86b99a;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}

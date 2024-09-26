@@ -1,0 +1,36 @@
+<div class="dashboard-container">
+  <div class="stats-container">
+    <div class="stat-box">
+      <span class="stat-title">Total medicamentos tomados en 2024</span>
+      <span class="stat-value">152</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-title">Porcentaje medicamentos tomados a tiempo</span>
+      <span class="stat-value">78%</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-title">Maximo de medicamentos en un día</span>
+      <span class="stat-value">14</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-title">Medicamento más tomado</span>
+      <span class="stat-value">Loratadina</span>
+    </div>
+  </div>
+
+  <div class="charts-container">
+    <div class="chart chart-bar">
+      <span class="chart-title">Alarmas activas</span>
+      <span class="chart-subtitle">Días de la semana / cantidad</span>
+      <canvas baseChart [data]="barChartData" [options]="barChartOptions" type="bar" [legend]="true">
+      </canvas>
+    </div>
+
+    <div class="chart chart-pie">
+      <span class="chart-title">Resumen de medicamentos</span>
+      <span class="chart-subtitle">% por medicamento</span>
+      <canvas baseChart [data]="pieChartData" [options]="pieChartOptions" type="pie" [legend]="true">
+      </canvas>
+    </div>
+  </div>
+</div>
